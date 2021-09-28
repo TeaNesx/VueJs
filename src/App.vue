@@ -1,18 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    {{name_first}}
+    {{`${name_first} ${name_last} ${alter}`}}
+    {{alter}}
+    {{gender}}
+    <hr>
+    {{fullName}}
+    <hr>
+    {{alter > 18 ? 'volljährig':'nicht volljährig'}}
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data: () => ({
+    name_first: 'Long',
+    name_last: 'Vu',
+    alter: 17,
+    gender: 'männlich'
+  }),
+  computed: {
+    fullName() {
+      return this.name_first + " " + this.name_last;
+    }
   }
+
 }
 </script>
 
