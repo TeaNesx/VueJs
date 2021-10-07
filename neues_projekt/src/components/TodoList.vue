@@ -9,6 +9,7 @@
 </template>
 
 <script>
+
 import TodoListItem from "@/components/TodoListItem";
 export default {
   name:"TodoList",
@@ -29,6 +30,7 @@ export default {
     }
   }
 }
+
 </script>
 
 <style>

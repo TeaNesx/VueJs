@@ -23,5 +23,7 @@ export default {
 </script>
 
 <style>
-
+.finishedTask {
+  text-decoration: line-through;
+}
 </style>
