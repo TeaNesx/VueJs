@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="logo-container col-2">
+            <div id="logo-container" class="col-2">
                 <slot name="navLogo">
                     <p class="missingSlot">
                         Missing Logo
@@ -9,7 +9,7 @@
                 </slot>
             </div>
 
-            <div class="nav-item col-5">
+            <div id="nav-item" class="col-5">
                 <ul>
                     <nav-item
                         v-for="item in items" :key="item.id"
