@@ -8,15 +8,14 @@
       Laden...
     </button>
     <hr>
-    <ul>
-      <li v-for="item in items" :key="item.id" :class="{'done':item.is_done}">
-       {{item.id}}. {{item.title}}
-      </li>
-    </ul>
+    <todo-list :elemente="items">
+        Mati ein hurensohn
+    </todo-list>
   </div>
 </template>
 
 <script>
+import TodoList from './components/TodoList.vue';
 
 export default {
   name: 'App',
@@ -24,6 +23,9 @@ export default {
     loading: false,
     items: []
   }),
+  components: { 
+    TodoList 
+  },
   methods: {
     async loadTodos() {
       let apiUrl = 'http://fakeapi.andreaspabst.com/api/todos';
