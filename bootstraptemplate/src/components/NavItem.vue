@@ -1,6 +1,7 @@
 <template>
-
-    <li>{{item.title}}</li>
+    <li class="nav-item">
+        {{item.title}}
+    </li>
 </template>
 
 <script>
@@ -11,6 +12,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+    .nav-item {
+        color: rgba(255, 255, 255, 0.55);
+    }
 </style>
