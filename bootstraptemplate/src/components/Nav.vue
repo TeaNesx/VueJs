@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row">
-            <div id="logo-container" class="col-2">
+            <div id="logo-container" class="col-3">
                 <slot name="navLogo">
                     <p class="missingSlot">
                         Missing Logo
@@ -9,8 +9,8 @@
                 </slot>
             </div>
 
-            <div id="nav-list" class="col-5">
-                <ul>
+            <div id="nav-list" class="col-7">
+                <ul class="list-unstyled">
                     <nav-item
                         v-for="item in items" :key="item.id"
                         :item="item"
@@ -20,6 +20,7 @@
 
             <div id="buy-now" class="col-2">
                 <BuyButton
+                    :id="ButtonId"
                     :color="ButtonColor"
                     :href="ButtonLink"
                     :text="ButtonText"
@@ -38,6 +39,11 @@ export default {
     components: { NavItem , BuyButton},
 
     data: () => ({
+        ButtonId:'buy-now-button',
+        ButtonColor:'#00ba94',
+        ButtonLink: 'google.de',
+        ButtonText: 'Buy Now',
+
         items: [
             {id: 1, title: 'Home', isActive: false, href:'/home'},
             {id: 2, title: 'Landings', isActive: false, href:'/landings'},
@@ -45,9 +51,6 @@ export default {
             {id: 4, title: 'Documnetation', isActive: false, href:'/docs'},
         ],
 
-        ButtonColor:'red',
-        ButtonLink: 'google.de',
-        ButtonText: 'Buy Now'
     }),
 
 }
@@ -67,5 +70,13 @@ export default {
         justify-content: flex-end;
         align-items: center;
         padding-top: 10px;
+    }
+
+    #buy-now {
+        display: flex;
+    }
+    
+    #buy-now a{
+        width: 8rem;
     }
 </style>

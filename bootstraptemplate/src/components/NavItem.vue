@@ -15,5 +15,6 @@ export default {
 <style scoped>
     .nav-item {
         color: rgba(255, 255, 255, 0.55);
+        padding-right: 20px;
     }
 </style>
