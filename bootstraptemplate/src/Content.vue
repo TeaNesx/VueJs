@@ -1,7 +1,7 @@
 <template>
     <section id="content">
         <div id="header-image">
-            <grid-two-column>
+            <GridTwoColumn>
                 <template v-slot:col-1>
                     <div class="text-view">
                         <h1 class="header-view">
@@ -14,7 +14,7 @@
 
                         <div class="row">
                             <div class="col-4">
-                                <custom-button
+                                <CustomButton
                                     :text="ButtonText"
                                     :href="ButtonLink"
                                     :color="ButtonColor"
@@ -33,23 +33,43 @@
                 <template v-slot:col-2>
                     <img src="./assets/images/windows.svg" alt="">
                 </template>
-            </grid-two-column>
+            </GridTwoColumn>
+        </div>
+
+        <div id="info-cards">
+            <GridThreeColumn>
+                <template v-slot:col-1>
+                    <InfoCard
+                        :src="InfoCard_1.src"
+                        :text="InfoCard_1.text"
+                        :item="InfoCard_1"
+                    />
+                </template>
+            </GridThreeColumn>
         </div>
     </section>
 </template>
 
 <script>
     import GridTwoColumn from './components/Grids/GridTwoColumn.vue'
+    import GridThreeColumn from './components/Grids/GridThreeColumn.vue'
     import CustomButton from './components/Button.vue'
+    import InfoCard from './components/Cards/InfoCard.vue'
 
     export default {
-        components: { GridTwoColumn , CustomButton},
+        components: { GridTwoColumn , CustomButton, GridThreeColumn, InfoCard},
         name: 'Main Content',
+
         data: () => ({
             ButtonId: 'header-button',
             ButtonLink: 'test.de',
             ButtonColor: '#00ba94',
-            ButtonText : 'Get Started'
+            ButtonText : 'Get Started',
+
+            InfoCard_1: [
+                {src: "test"},
+                {text: 'testtest'}
+            ]
         })
     }
 </script>
